@@ -11,6 +11,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @Table(name = "topico")
 @Entity(name = "Topico")
@@ -41,4 +42,17 @@ public class Topico {
         this.autor = autor;
         this.curso = curso;
     }
+
+    public void atualizarTopico(DadosAtualizacaoTopico dados) {
+        if(dados.titulo() != null) {
+            this.titulo = dados.titulo();
+        }
+        if(dados.mensagem() != null) {
+            this.mensagem = dados.mensagem();
+        }
+        if(dados.status() != null) {
+            this.status = dados.status();
+        }
+    }
+
 }
