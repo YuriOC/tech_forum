@@ -44,32 +44,32 @@ Ferramentas auxiliares utilizadas durante o desenvolvimento:
 
 ### 1. Clonar o repositório
 
-\`\`\`bash
+```bash
 git clone https://github.com/seu-usuario/tech_forum.git
 cd tech_forum
-\`\`\`
+```
 
 ### 2. Configurar o banco de dados
 
 Crie um banco de dados MySQL:
 
-\`\`\`sql
+```sql
 CREATE DATABASE techforum;
-\`\`\`
+```
 
 Depois configure o arquivo:
 
-\`\`\`
+```
 src/main/resources/application.properties
-\`\`\`
+```
 
 Exemplo:
 
-\`\`\`properties
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/techforum
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
-\`\`\`
+```
 
 As tabelas serão criadas automaticamente através das migrations.
 
@@ -79,15 +79,15 @@ As tabelas serão criadas automaticamente através das migrations.
 
 Execute o projeto utilizando o Maven:
 
-\`\`\`bash
+```bash
 mvn spring-boot:run
-\`\`\`
+```
 
 Ou execute a classe principal:
 
-\`\`\`
+```
 TechforumApplication.java
-\`\`\`
+```
 
 ---
 
@@ -95,41 +95,41 @@ TechforumApplication.java
 
 A aplicação ficará disponível em:
 
-\`\`\`
+```
 http://localhost:8080
-\`\`\`
+```
 
 Exemplo de requisição de autenticação:
 
-\`\`\`
+```
 POST /login
-\`\`\`
+```
 
 Body JSON:
 
-\`\`\`json
+```json
 {
   \"login\": \"usuario@email.com\",
   \"senha\": \"123456\"
 }
-\`\`\`
+```
 
 Após autenticação, a API retornará um **JWT**, que deve ser enviado nas demais requisições no header:
 
-\`\`\`
+```
 Authorization: Bearer <token>
-\`\`\`
+```
 
 ---
 
 ## Estrutura do projeto
 
-\`\`\`
+```
 controller
 domain
 repository
 infra.security
-\`\`\`
+```
 
 - **controller** → endpoints da API  
 - **domain** → entidades e DTOs  
